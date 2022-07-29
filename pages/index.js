@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -7,7 +5,7 @@ export default function Home() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch(`/api`);
+        const response = await fetch(`/api/books`);
         const books = (await response.json()).data;
         console.log(books);
         setBooks(books);
